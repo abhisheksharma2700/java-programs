@@ -1,4 +1,4 @@
-package studentinput;
+package inputoutput;
 import java.util.Scanner;
  class StudentInput
   {
