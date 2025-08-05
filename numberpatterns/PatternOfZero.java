@@ -1,6 +1,6 @@
-package numberpatterns;
+//package numberpatterns;
 import java.util.*;
-public class ZeroPattern{
+public class PatternOfZero{
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         System.out.println("enter the lemgth");
