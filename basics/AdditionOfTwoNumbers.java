@@ -1,4 +1,4 @@
-package basics;
+//package basics;
 class AdditionOfTwoNumbers
 {
     public static void main(String[] args)

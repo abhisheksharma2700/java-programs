@@ -1,4 +1,4 @@
-package inputoutput;
+//package inputoutput;
 import java.util.*;
 public class FibonacciSeries
  {
@@ -11,7 +11,7 @@ public class FibonacciSeries
     int second=1;
     int next;
     System.out.println("The fibonacci series to the " +n+ "term is");
-    for(i=1; i<n; i++)
+    for(i=1; i<=n; i++)
    { System.out.print(first+" ");
      next=first+second;
      first= second;

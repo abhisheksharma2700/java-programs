@@ -1,4 +1,4 @@
-package oops;
+//package oops;
  abstract class Vehicle {
     int no_of_tyres;
     abstract void start();
@@ -16,9 +16,11 @@ class Bike extends Vehicle{
         System.out.println("Starts with kick");
     }
     public static void main(String[] args){
-        Car c= new Car();
-        Bike b= new Bike();
-        c.start();
-        b.start();
+       //Car c= new Car();
+        //Bike b= new Bike();
+        Vehicle v= new Car();
+        v.start();
+       // c.start();
+        //b.start();
     }
 }

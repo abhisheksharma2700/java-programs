@@ -1,5 +1,5 @@
-package basics;
-class Variable_Names
+//package basics;
+class VariablesNames
 {
     public static void main(String[] args)
   {
@@ -14,6 +14,6 @@ class Variable_Names
    System.out.println("student id:" + studentid);
    System.out.println("student fee:" + studentfee);
    System.out.println("student grade:" + studentgrade);  
-   System.out.println("student enrollmentStatus" + studentenrolled);
+   System.out.println("student enrollmentStatus " + studentenrolled);
   }
 }

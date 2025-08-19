@@ -1,4 +1,4 @@
-package oops;
+//package oops;
 class Test {
     void show(int a){
         System.out.println("this is an integer");
