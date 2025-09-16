@@ -1,0 +1,56 @@
+
+import java.sql.*;
+import java.util.Scanner;
+// batch data using prepare statement
+
+public class Batchdata2 {
+    private static final String url="jdbc:mysql://localhost:3306/mydb";
+    private static final String username="root";
+    private static final String password="Abhishek2700@";
+    public static void main(String[] args)  {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("class not found exception");
+        }
+
+
+        try {
+
+
+            Connection connection = DriverManager.getConnection(url, username, password);
+            String query = "insert into student(name,age,marks) values (?,?,?) ";
+            PreparedStatement preparedStatement= connection.prepareStatement(query);
+            Scanner sc = new Scanner(System.in);
+            while (true) {
+                System.out.println("Enter the name");
+                String name = sc.next();
+                System.out.println("enter the age");
+                int age = sc.nextInt();
+                System.out.println("Enter the marks");
+                double marks = sc.nextDouble();
+                System.out.println("do you want to insert more data or not (Y/N)");
+                String choice = sc.next();
+                preparedStatement.setString(1,name);
+                preparedStatement.setInt(2,age);
+                preparedStatement.setDouble(3,marks);
+
+                preparedStatement.addBatch();
+                if (choice.toUpperCase().equals("N")) {
+                    break;
+                }
+            }
+            int[] arr = preparedStatement.executeBatch();
+            for(int i=0;i<arr.length;i++) {
+                if (arr[i] == 0) {
+                    System.out.println("Query " + i + " not executed successfully");
+                }
+            }
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+
+    }
+}
